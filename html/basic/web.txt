@@ -1,0 +1,15 @@
+웹 기반
+http, https 프로토콜 기반으로 동작하는 프로그램 작성
+=> 브라우저 해석
+=> HTML (Hyper Text Markup Language) : 구조 설계
+=> CSS (Cascading Style Sheets) : 디자인
+=> JavaScript : 동작
+
+클라이언트 <=====> 서버
+요청       <=====> 응답
+
+emmet 단축키
+!
+lorem
+br*3
+p>lorem
