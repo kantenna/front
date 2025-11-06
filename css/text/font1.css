@@ -1,0 +1,50 @@
+p {
+  /* normal, italic, oblique */
+  font-style: oblique;
+  /* 100 ~ 900(400 기본값), bold, normal */
+  font-weight: 900;
+  font-size: 1.2em; /* 16 * 1.2 */
+  /* 글꼴 : 설치된 글꼴 
+    글꼴 계열 : serif, sans-serif, monospace, cursive*/
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* text-align : left: 기본값
+   text_decoration : underline(밑줄) line-through(취소선) overline 
+*/
+p.left {
+  text-align: left;
+  text-decoration: underline line-through overline;
+}
+p.right {
+  text-align: end;
+  text-decoration: wavy underline tomato;
+}
+p.center {
+  text-align: center;
+  text-decoration: dotted underline overline tomato 5px;
+}
+p.justify {
+  text-align: justify;
+}
+
+/* text-transform : 
+    1. capitalize(각 단어의 첫글자만 대문자) 
+    2. lowercase
+    3. uppercase
+*/
+p.transform {
+  text-transform: uppercase;
+}
+
+p.shadow {
+  /* 상, 하, 좌, 우 */
+  /* x좌표 y좌표 색상 */
+  /* 0은 단위를 쓰지 않아도 됨 */
+  text-shadow: 0 1px red, 0 -1px red, 1px 0 red, -1px 0 red;
+}
+
+p.indent {
+  /* -값은 내어쓰기, + 들여쓰기 */
+  text-indent: -50px;
+}
