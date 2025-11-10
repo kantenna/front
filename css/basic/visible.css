@@ -1,0 +1,31 @@
+/* 요소 감추기
+    1. visibility: hidden;
+        요소는 안보이지만 자리는 차지하고 있음
+    2. display : none;
+        요소는 안보이고 자리도 안 차지함
+*/
+
+.container div {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+.container div:first-child {
+  background-color: azure;
+}
+.container div:nth-child(2) {
+  background-color: bisque;
+  display: none;
+}
+.container div:nth-child(3) {
+  background-color: darkcyan;
+  visibility: hidden;
+}
+.container div:last-child {
+  background-color: darkgrey;
+}

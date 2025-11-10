@@ -1,0 +1,101 @@
+/* header h1 : font 크기 3em, 가운데 정렬 */
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+#menus > div {
+  height: 400px;
+  position: relative;
+}
+
+/* menus h2
+    안쪽여백 5px
+    폰트 크기 2em
+    색상 흰색
+*/
+#menus h2 {
+  padding: 5px;
+  font-size: 2em;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  position: absolute;
+  bottom: 10px;
+  right: 3%;
+}
+
+/* menu1 배경이미지 dish1 */
+#menu1 {
+  background: url(../images/dish1.jpg) no-repeat center;
+  background-size: cover;
+}
+/* menu2 배경이미지 dish2 */
+#menu2 {
+  background: url(../images/dish2.jpg) no-repeat center;
+  background-size: cover;
+}
+/* menu3 배경이미지 dish3 */
+#menu3 {
+  background: url(../images/dish3.jpg) no-repeat center;
+  background-size: cover;
+}
+/* menu4 배경이미지 dish4 */
+#menu4 {
+  background: url(../images/dish4.jpg) no-repeat center;
+  background-size: cover;
+}
+/* menu5 배경이미지 dish5 */
+#menu5 {
+  background: url(../images/dish5.jpg) no-repeat center;
+  background-size: cover;
+}
+/* footer 
+    글자크기 1.2em 
+    글자색 #eee 
+    가운데 정렬 
+    높이 200px
+*/
+footer {
+  background-color: blueviolet;
+  font-size: 1.2em;
+  color: #eee;
+  text-align: center;
+  height: 200px;
+}
+@media screen and (min-width: 768px) {
+  #menus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #menu1,
+  #menu2,
+  #menu3,
+  #menu4 {
+    width: 49%;
+  }
+  #menu5 {
+    margin-left: 0;
+    width: 100%;
+    flex: initial;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #menu1,
+  #menu2,
+  #menu3,
+  #menu4,
+  #menu5 {
+    width: 33%;
+  }
+  #menu5 {
+    flex: 2 2 0; /* 증가 감소 기본값 */
+    margin-left: 0.5%;
+  }
+}
