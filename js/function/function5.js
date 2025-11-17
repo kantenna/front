@@ -1,0 +1,35 @@
+// 콜백 함수 : 함수를 다른 함수의 전달 인자로 전달, 전달된 함수 호출 가능
+// function ask(question, yes, no) {
+//   if (confirm(question)) {
+//     yes();
+//   } else {
+//     no();
+//   }
+// }
+
+// function showOk() {
+//   alert("동의");
+// }
+// function showCancel() {
+//   alert("취소");
+// }
+
+// ask("동의하십니까?", showOk, showCancel);
+
+// const foo = function (func) {
+//   func();
+// };
+
+// foo(() => {
+//   console.log("함수를 전달 인자로 전달");
+// });
+
+function callTenTimes(callback) {
+  for (let index = 0; index < 10; index++) {
+    callback();
+  }
+}
+
+const callback = () => console.log("함수호출");
+
+callTenTimes(callback);
