@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      body {
+        background-color: blueviolet;
+      }
+    </style> -->
+  </head>
+  <body>
+    <form action="" method="get">
+      <div>
+        <input type="radio" name="color" id="" value="lightblue" />파랑
+        <input type="radio" name="color" id="" value="green" />녹색
+      </div>
+    </form>
+    <script>
+      // 파랑, 녹색 선택 시 문서 배경색 변경
+      // js에서 css 설정하는 방법
+      // background-color == backgroundColor
+
+      //   document.body.style.backgroundColor = "blueviolet";
+      //   document.querySelector().style.backgroundColor = "blueviolet";
+
+      // 이벤트 대상 요소 찾기
+      const rdos = document.querySelectorAll("[type = 'radio']");
+
+      // 방법 1
+      //   rdos[0].addEventListener("click", () => {
+      //     document.body.style.backgroundColor = "lightblue";
+      //   });
+      //   rdos[1].addEventListener("click", () => {
+      //     document.body.style.backgroundColor = "green";
+      //   });
+
+      // 방법 2
+      const changeColor = (color) => {
+        document.body.style.backgroundColor = color;
+      };
+
+      //   rdos[0].addEventListener("click", () => changeColor("lightblue"));
+      //   rdos[1].addEventListener("click", () => changeColor("green"));
+
+      // 방법 3 : value 사용
+      //   rdos[0].addEventListener("click", (e) => {
+      //     // e.target : 이벤트 대상!
+      //     // console.log(e.target.value);
+      //     changeColor(e.target.value);
+      //   });
+      //   rdos[1].addEventListener("click", (e) => {
+      //     changeColor(e.target.value);
+      //   });
+
+      // 방법 4 : 반복문 처리
+      //   rdos.forEach((rdo) => {
+      //     rdo.addEventListener("click", (e) => {
+      //       changeColor(e.target.value);
+      //     });
+      //   });
+
+      // 방법 5 : 이벤트 버블링 이용
+      const form = document.querySelector("form");
+
+      form.addEventListener("click", (e) => {
+        changeColor(e.target.value);
+      });
+    </script>
+  </body>
+</html>
