@@ -1,3 +1,23 @@
+document.querySelector("a").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // href 값 가져오기
+  console.log(e.target.href);
+  // target 값 가져오기
+  console.log(e.target.target);
+  // data- 값 가져오기
+  console.log(e.target.dataset.link);
+  console.log(e.target.dataset.linkTest);
+
+  // naver가 들어있다면 이동,
+  // if (e.target.href.includes("naver")) {
+  //   location.href = e.target.href;
+  // } else {
+  //   // 아니라면 구글로 이동
+  //   location.href = "http://www.google.com";
+  // }
+});
+
 // form submit 발생 시
 
 document.querySelector("form").addEventListener("submit", (e) => {
