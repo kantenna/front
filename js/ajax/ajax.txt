@@ -1,0 +1,24 @@
+ajax(Asynchronous JavaScript And XML)
+- 비동기적으로 정보(XML, JSON) 교환
+- 초창기 SMLHttpRequest 객체를 사용함
+- fetch API / axios 사용
+
+
+JSON(JavaScript Object Notation)
+
+객체: 중괄호({})로 시작하고 끝나며, 이름-값 쌍("name": "value")의 모음으로 구성됩니다. 각 쌍은 쉼표(,)로 구분합니다.
+예시: {"name": "Alice", "age": 30}
+
+json 배열: 대괄호()로 시작하고 끝내며, 순서화된 값들의 목록입니다 [20]. 값들은 쉼표(,)로 구분합니다.
+예시: [ {"name": "Alice", "age": 30}, {"name": "Alice", "age": 30} ]
+값의 종류: 문자열("text"), 숫자(100), 불리언(true, false), null, 객체({}), 배열(``)을 사용할 수 있습니다.
+
+자바스크립트 객체
+{ name : "홍길동" }
+
+{
+    "userId": 1,
+    "id": 1,
+    "title": "delectus aut autem",
+    "completed": false
+}
