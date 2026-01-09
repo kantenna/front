@@ -36,7 +36,7 @@ let myCar: Car = {
 // myCar.model = "Honda"; // Cannot assign to 'model' because it is a read-only property.
 
 // A~D 점수 부여를 해야한다면
-let student: Student = {
+let student: Student2 = {
   name: "John",
   id: 12345,
   1: "A",
@@ -61,13 +61,13 @@ let student2: Student2 = {
   //   4: "F",
 };
 
-interface Car {
+interface Car1 {
   color: string;
   wheels: number;
   start(): void;
 }
 
-class Truck implements Car {
+class Truck implements Car1 {
   color: string;
   wheels: number;
 
