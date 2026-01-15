@@ -2,12 +2,12 @@ import { useState } from 'react';
 import '../../App.css';
 
 function InputMultiSample2() {
-  const [inputs, setInputs] = useState<{ name: string; nickName: string }>({
+  const [inputs, setInputs] = useState<{ name: string; nickname: string }>({
     name: '',
-    nickName: '',
+    nickname: '',
   });
 
-  const { name, nickName } = inputs;
+  const { name, nickname } = inputs;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -21,7 +21,7 @@ function InputMultiSample2() {
     <>
       <input
         type="text"
-        name=""
+        name="name"
         onChange={handleChange}
         value={name}
         placeholder="이름"
@@ -29,9 +29,9 @@ function InputMultiSample2() {
       />
       <input
         type="text"
-        name=""
+        name="nickname"
         onChange={handleChange}
-        value={nickName}
+        value={nickname}
         placeholder="닉네임"
         className="border-2 p-1.5"
       />
@@ -40,7 +40,7 @@ function InputMultiSample2() {
         onClick={() =>
           setInputs({
             name: '',
-            nickName: '',
+            nickname: '',
           })
         }
       >
@@ -48,7 +48,7 @@ function InputMultiSample2() {
       </button>
       <div>
         <b>
-          입력값 : {name} : ({nickName})
+          입력값 : {name} : ({nickname})
         </b>
       </div>
     </>
