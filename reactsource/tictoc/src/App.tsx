@@ -9,12 +9,49 @@ function App() {
 
   // history 관리
   const [history, setHistory] = useState<Squares[]>([Array(9).fill(null)]);
+
+  // 이동변수 관리
+  const [currentMove, setCurrnetMove] = useState<number>(0);
+
   // 이전 history 변수
-  const currentSquares = history[history.length - 1];
+  const currentSquares = history[currentMove];
+
   const handlePlay = (nextSquare: Squares) => {
-    setHistory([...history, nextSquare]);
+    const nextHistory: Squares[] = [
+      ...history.slice(0, currentMove + 1),
+      nextSquare,
+    ];
+    setHistory(nextHistory);
+    setCurrnetMove(nextHistory.length - 1);
     setXIsNext(!xIsNext);
   };
+
+  // 지난 플레이 확인
+  const jumpTo = (nextMove: number) => {
+    setCurrnetMove(nextMove);
+    setXIsNext(nextMove % 2 == 0);
+  };
+
+  // 오른쪽에 기록 보여주기
+  const moves = history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = 'Go to move #' + move;
+    } else {
+      description = 'Go to Game Start';
+    }
+
+    return (
+      <li key={move} className="mt-0.5">
+        <button
+          onClick={() => jumpTo(move)}
+          className="rounded-xs bg-gray-300 p-1 text-black"
+        >
+          {description}
+        </button>
+      </li>
+    );
+  });
 
   return (
     <>
@@ -26,7 +63,7 @@ function App() {
             onPlay={handlePlay}
           ></Board>
         </div>
-        <ul>게임 기록</ul>
+        <ol>{moves}</ol>
       </div>
     </>
   );
