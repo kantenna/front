@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-const TodoTeamplate = ({ children }: { children: ReactNode }) => {
+const TodoTeamplate2 = ({ children }: { children: ReactNode }) => {
   return (
     <div className="mt-10 flex flex-col items-center">
       <div className="w-3/5 bg-cyan-800 p-3 text-center text-3xl text-white">
@@ -11,4 +11,4 @@ const TodoTeamplate = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default TodoTeamplate;
+export default TodoTeamplate2;

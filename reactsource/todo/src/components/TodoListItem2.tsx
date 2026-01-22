@@ -6,7 +6,7 @@ import {
 import type { Todo } from '../types/todo';
 import { useState } from 'react';
 
-const TodoListItem = ({ todo, onDeleteTodo, onChangeTodo }) => {
+const TodoListItem2 = ({ todo, onDeleteTodo, onChangeTodo }) => {
   const { id, title, completed } = todo;
   const [isCompleted, setIsCompleted] = useState(completed);
 
@@ -39,4 +39,4 @@ const TodoListItem = ({ todo, onDeleteTodo, onChangeTodo }) => {
   );
 };
 
-export default TodoListItem;
+export default TodoListItem2;
