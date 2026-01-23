@@ -4,6 +4,7 @@ import './index.css';
 import TaskApp from './component/reducer/TaskApp.tsx';
 import Memo from './component/memo/Memo.tsx';
 import Parent from './component/memo/Parent.tsx';
+import LifeCycle2 from './component/effect/LifeCycle2.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <>
@@ -30,12 +31,12 @@ createRoot(document.getElementById('root')!).render(
     {/* <Signup2></Signup2> */}
     {/* <UserForm></UserForm> */}
     {/* <LifeCycle></LifeCycle> */}
-    {/* <LifeCycle2></LifeCycle2> */}
+    <LifeCycle2></LifeCycle2>
     {/* <BookApp></BookApp> */}
     {/* <TaskApp></TaskApp> */}
     {/* <UserApp></UserApp> */}
     {/* <UserApp2></UserApp2> */}
     {/* <Memo></Memo> */}
-    <Parent></Parent>
+    {/* <Parent></Parent> */}
   </>,
 );

@@ -39,7 +39,10 @@ export type TodoCreate = Omit<Todo, 'createDate' | 'updateDate'>;
 
 // 서버 연동 데이터 타입
 // 입력 / 수정
-export type TodoInsert = Omit<Todo, 'id' | 'createDate' | 'updateDate'>;
+// 입력 : id(X) 수정: id 필요
+export type TodoUpsert = Omit<Todo, 'id' | 'createDate' | 'updateDate'> & {
+  id?: number;
+};
 // 삭제 : id(number)
 // 조회(서버로부터 넘어오는 데이터 담기) : Todo 그대로
 
@@ -51,7 +54,31 @@ export function toCompleteQuery(completed: boolean): boolParam {
 
 // TodoList에서 사용할 props 타입
 export type Todos = {
-  todos: Todo[];
+  todos: PageResult<Todo>;
   onDeleteTodo: (id: number) => void;
-  onChangeTodo: (todo: TodoInsert) => void;
+  onChangeTodo: (todo: TodoUpsert) => void;
+};
+
+export type Todoitems = Omit<Todos, 'todos'> & {
+  todo: Todo;
+};
+
+// 페이지 나누기 타입
+// 서버 : PageResultDTO
+export type PageRequestDTO = {
+  page: number;
+  size: number;
+};
+
+export type PageResult<T> = {
+  dtoList: T[];
+  pageNumList: number[];
+  pageRequestDTO: PageRequestDTO;
+  prev: boolean;
+  next: boolean;
+  prevPage: number;
+  nextPage: number;
+  totalPage: number;
+  current: number;
+  totalCount: number;
 };
