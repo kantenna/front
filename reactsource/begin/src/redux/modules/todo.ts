@@ -3,22 +3,25 @@ import type { TodosAction } from '../types/type';
 // todo 추가, 변경, 삭제
 const INSERT = 'todos/INSERT';
 const TOGGLE = 'todos/TOGGLE';
-const DELETE = 'todos/DELETE';
+const REMOVE = 'todos/REMOVE';
+const CHANGE_INPUT = 'todos/CHANGE_INPUT';
 
 export const insert = (text: string) => ({
   type: INSERT,
-  todos: {
+  todo: {
     id: id++,
     text,
     done: false,
   },
 });
 export const remove = (id: number) => ({
-  type: DELETE,
+  type: REMOVE,
   todos: {
     id,
   },
 });
+export const toggle = (id: number) => ({ type: TOGGLE, id });
+export const changeInput = (input: string) => ({ type: CHANGE_INPUT, input });
 
 let id = 3;
 
@@ -32,14 +35,24 @@ const initialState = {
 
 export const todos = (state = initialState, action: TodosAction) => {
   switch (action.type) {
-    case INSERT:
+    case CHANGE_INPUT:
       return {
         ...state,
         input: action.input,
       };
+    case INSERT:
+      return {
+        ...state,
+        todos: state.todos.concat(action.todo),
+      };
     case TOGGLE:
-      return {};
-    case DELETE:
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.id ? { ...todo, done: !todo.done } : todo,
+        ),
+      };
+    case REMOVE:
       return {
         ...state,
         todos: state.todos.filter((todo) => todo.id !== action.id),

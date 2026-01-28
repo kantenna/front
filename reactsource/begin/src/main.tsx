@@ -5,6 +5,8 @@ import MyTodo from './redux/component/MyTodo.tsx';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './redux/modules/index.ts';
 
+// store : 애플리케이션 당 하나의 스토어
+// 데이터 공유
 const store = configureStore({
   reducer: rootReducer,
 });
